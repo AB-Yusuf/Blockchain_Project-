@@ -1,0 +1,93 @@
+Block chain: The blocks are connected. Each block depends on the previous block based on
+something. This is why it is called a chain. The blocks are linked.
+
+A block is a vertical list of verified transactions. Every block has its own unique hash
+value.
+The chain represents the linkage between the blocks. To get the hash of a new block, 
+the hash of the previous block is also taken in and is used in a way to generate the
+hash of the new block. A change in the hash of the previous block will lead to in a 
+change in the hash of the new block, which shows that each blocks are linked and 
+that is why it is referred to as a BlockChain. The whole hash process is done by a special
+algorithm.
+
+Structure of BlockChain
+Let's take a look at these systems
+A centralised Bank: This means that whoever wants to make financial transactions
+has to go through this bank. It does not matter how far you are from this bank.
+You still have to come all the way to use the services of this bank.
+
+A decentralised Bank: This same bank occur in different areas and the need for a center
+bank for transactions is eliminated. This is also not enough, as these different
+banks need to find a way to get connected, so transactions can be made much faster.
+
+Distributed Network: These Scattered banks are connected to one another forming a 
+crystal like network system. Each bank can fully communicate with any other bank
+in the network.
+
+The structure of a block chain uses these Systems. It is a decentralised and 
+distributed Network.
+
+Each bank in the network is called a Node.
+Each Nodes are interconnected with one another.
+
+Operations of a BlockChain
+The Block chain provides transparency and anonymousity.
+
+As every node performs the same operation as existing physical banks. The agreed upon
+medium of value for exchange is called a CryptoCurrency eg Bitcoin.
+
+Now we understand the Network.
+How do I use it?
+First, you need to be connected to this network, just like how you open an account with
+a bank. 
+Just that in this case, this is an open bank. The network is open to everyone in the 
+world, and you register yourself with an Wallet.
+
+Wallet is a means of identification on the Bitcoin Network.
+It is made of two things, the public key, which is your wallet ID, what everyone sees
+to perform a transaction with you. A private key, just like the pin to your debit Card.
+This private key should be kept secret and it is what is used
+to sign or give consent by the wallet owner on the transaction being made.
+Since the names of the owners are not on the Wallet just the Wallet ID, which is 
+a set of a special and unique digit of Numbers. It provides anonymosity
+
+How does this work?
+Every Node in the network has its copy of the block chains pr list of blocks
+which consists of all the transactions being made on the network.
+
+For a new Block to be added the Block Chain. First the new block is a vertical list
+of unverified transactions. Every node  competes to add a new bock to the already existing
+block chains.
+To do this they have to solve an algorithmic puzzle of which helps positionthe next block
+to be added to the block chain.
+
+Every block has an Hash which is of 64 characters and this hash is in a 
+specific format. Let's say it must start with four Zeros.
+
+This new block has an header that consists of meta-data.
+This header is hashed. The BlockChain network develops a target for the new block.
+This is the puzzle the miners are trying to solve. They must generate a value 
+below the target. These values occur in a particular format of hexadecimals.
+
+To generate this puzzle key which is what I call it. 
+The Network provides an hint to solve the puzzle. This extra hint is called a Nonce
+The Nonce is a set of numbers which any miner can develop a value for which
+is used to to generate a Hash Value, which if the generated hash is less than the target
+the puzzle has been solved and the miner goes ahead to verify the the transactions in the 
+block. This generates the proof of work.
+
+
+This is referred to as the proof of work in the BlockChain Network  After this is
+completed it then informs every other node of the transaction and the other nodes
+verifies the gotten Nonce, if it gives the correct Hash, they also verify the transactions
+given it is all correct. The all broadcast their responses back to the network on the Block
+being verified or Not. If more than 60% of the Miners vote that the 
+new block is verified, the new block 
+get added to the network.
+
+How do We code this Out.......
+
+
+Stages of Logic:
+Each New Block contains data about the previous block
+
