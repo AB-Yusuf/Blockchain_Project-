@@ -2,8 +2,8 @@
 blockChain = []
 
 # To add a value to the block chain List 
-def add_transaction_amount(transaction_amount, last_transaction = [1]):
-    """ It adds a new transaction to the blockchain,
+def add_transactions(new_block_transaction, former_block_transaction = [1]):
+    """ It adds a new transaction to the new block,
         as well as adding the previous transaction from the former block
         in the blockchain.
         
@@ -12,26 +12,26 @@ def add_transaction_amount(transaction_amount, last_transaction = [1]):
                                   cryptocurrency to be transacted 
                                   which should be included in the current block.
                                   h
-            :last_transaction:    Values of the prevous transactions in the former block
+            :former_block_transaction:    Values of the prevous transactions in the former block
                                   which is entered into the current block.
     """
-    if last_transaction == None:
-        last_transaction = [1]
-    blockChain.append([last_transaction, transaction_amount])
+    if former_block_transaction == None:
+        former_block_transaction = [1]
+    blockChain.append([former_block_transaction, new_block_transaction])
 
 
-def get_last_blockchain_value():
+def get_last_block_transactions():
     """ It returns the last value of the current block in the blockchain."""
     if len(blockChain) < 1:
         return None
     return blockChain[-1]
 
 
-def get_transaction_value():
+def get_currency_amount():
     """ It prompts users to enter cryptocurrency values,
         which is used in making transactions.
      """
-    user_input = float(input('Kindly enter amount to be transferred: '))
+    user_input = float(input('Kindly enter amount of coins to be transferred: '))
     return user_input
 
 
@@ -40,27 +40,33 @@ def get_user_choice():
     return user_choice
 
 
-def print_blockchain_elements():
+def display_each_block():
     # Displaying each block in the blockchain
-    for block in blockChain:
-        print('Displaying Block')
-        print(block)
+    if blockChain:
+        for block in blockChain:
+            print('Displaying Block')
+            print(block)
+    else:
+        print("BlockChain is empty")
+    
+    print(blockChain)
 
 
 
 while True:
-    print('Please choose')
-    print('1: Add a new transaction value')
-    print('2: Display each block in the blockchain')
-    print('3: Manipulate the chain')
-    print('4: Quit blockchain application')
+    print('Please choose', end='\n')
+    print('1: Add a new transaction', end='\n')
+    print('2: Display each block in the blockchain', end='\n')
+    print('3: Manipulate the chain', end='\n')
+    print('4: Quit blockchain application', end='\n')
+    
     user_choice = get_user_choice()
     
     if user_choice == '1':
-        transferred_amount = get_transaction_value()
-        add_transaction_amount(transferred_amount, get_last_blockchain_value())
+        transferred_amount = get_currency_amount()
+        add_transactions(transferred_amount, get_last_block_transactions())
     elif user_choice == '2':
-        print_blockchain_elements()
+        display_each_block()
     elif user_choice == '3':
         if len(blockChain) >= 1:
             blockChain[0] = [2]
