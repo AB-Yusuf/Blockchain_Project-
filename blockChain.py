@@ -54,28 +54,38 @@ def display_each_block():
 
 
 def verify_chain():
+    print('The block chain in verify_chain function')
+    print(blockChain)
     block_index = 0
     is_chain_valid = True
     for block in blockChain:
+        print('The current block')
+        print(block)
         if block_index == 0:
             block_index += 1
             continue
         elif block[0] == blockChain[block_index-1]:
-            is__chain_valid = True
+            print("block[0]")
+            print(block[0])
+            print("blockchain[block_index - 1]")
+            print(blockChain[block_index-1])
+            is_chain_valid = True
         else:
             is_chain_valid = False
-            
+            print("Checking your blockchain")
+            print(block[0])
+            print(blockChain[block_index-1])
             break
         block_index += 1
     return is_chain_valid
 
 
 while True:
-    print('Please choose', end='\n')
-    print('1: Add a new transaction', end='\n')
-    print('2: Display each block in the blockchain', end='\n')
-    print('3: Manipulate the chain', end='\n')
-    print('4: Quit blockchain application', end='\n')
+    print('Please choose\n')
+    print('1: Add a new transaction\n')
+    print('2: Display each block in the blockchain\n')
+    print('3: Manipulate the chain\n')
+    print('4: Quit blockchain application\n')
 
     user_choice = get_user_choice()
 
@@ -85,9 +95,13 @@ while True:
     elif user_choice == '2':
         display_each_block()
     elif user_choice == '3':
+        print("valid BlockChain")
+        print(blockChain, end='\n\n')
         if len(blockChain) >= 1:
             blockChain[0] = [2]
             print("Blockchain first value has been changed to 2")
+            print(blockChain, end='\n\n')
+           
     elif user_choice == '11':
         verify_chain()
     elif user_choice == '4':
